@@ -41,24 +41,13 @@ DESCRIPTION
 
 PARAMETERS
 
-	This module accepts the same parameters that 'Tie::File', plus:
-	
+	This module accepts the same parameters that C<Tie::File>, plus:
+
 	C<code>
-		A reference to a subroutine that must be able to retrieve one data record per call.
-		This subroutine must accept one parameter:
-		an already opened filehandle (or "undef" if there are not more records).
-		For examples, see 'Tie::File::AnyData::Bio::Fasta' or
-		'Tie::File::AnyData::MultiRecord_CSV.
 
+	A reference to a subroutine that must be able to retrieve one data record per call. This subroutine must accept one parameter: an already opened filehandle (or "undef" if there are not more records).
+For examples, see C<Tie::File::AnyData::Bio::Fasta> or C<Tie::File::AnyData::CSV>.
 
-INSTALLATION
-
-	To install this module, run the following commands:
-
-	    perl Makefile.PL
-	    make
-	    make test
-	    make install
 
 AUTHOR
 
