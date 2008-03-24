@@ -5,7 +5,7 @@ use warnings;
 use Carp;
 use Tie::File;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 sub TIEARRAY
   {
@@ -61,26 +61,26 @@ Tie::File::AnyData - Access the data of a disk file via a Perl array
 
 =head1 DESCRIPTION
 
-	This module hacks 'Tie::File' to allow it to manage any kind of data.
-	See the documentation of 'Tie::File' for more details on the functionality of this module.
+This module hacks 'Tie::File' to allow it to manage any kind of data.
+See the documentation of 'Tie::File' for more details on the functionality of this module.
 
-	To do so, you must provide a code reference (an anonymous subroutine) to the tie call. This
-	code should be able to read one record of your data file per call.
+To do so, you must provide a code reference (an anonymous subroutine) to the tie call. This
+code should be able to read one record of your data file per call.
 
-	There are already some modules that subclasses this one and provide examples of use of this module. For example,
-	check the documentation for C<Tie::File::AnyData::Bio::Fasta> or C<Tie::File::AnyData::MultiRecord_CSV>. You can
-	use them as guidelines to build your own subroutines and modules. If you don't know how to do that, but you are
-	still interested in having a module that manages your format of interest, contact me and I will do my best to 
-	help you in the implementation.
+There are already some modules that subclasses this one and provide examples of use of this module. For example,
+check the documentation for C<Tie::File::AnyData::Bio::Fasta> or C<Tie::File::AnyData::MultiRecord_CSV>. You can
+use them as guidelines to build your own subroutines and modules. If you don't know how to do that, but you are
+still interested in having a module that manages your format of interest, contact me and I will do my best to 
+help you in the implementation.
 
-	This module keeps intact all the goodies that Tie::File offers (caching and memory limits, deferred writing, etc).
-	In fact you can safely use this module with the default parameters instead of Tie::File without performance penalty.
+This module keeps intact all the goodies that Tie::File offers (caching and memory limits, deferred writing, etc).
+In fact you can safely use this module with the default parameters instead of Tie::File without performance penalty.
 
 =head2 PARAMETERS
 
 This module accepts the same parameters that C<Tie::File>, plus:
 
-=head3 C<code>
+C<code>
 
 A reference to a subroutine that must be able to retrieve one data record per call. This subroutine must accept one parameter: an already opened filehandle (or "undef" if there are not more records).
 For examples, see C<Tie::File::AnyData::Bio::Fasta> or C<Tie::File::AnyData::CSV>.
